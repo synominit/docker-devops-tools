@@ -1,6 +1,6 @@
 # DevOps Tool Kit Container
 
-Devops Tools in a container for easy, platform agnostic 
+Devops Tools in a container for easy, platform agnostic usage
 
 ## Tags
 
