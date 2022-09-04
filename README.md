@@ -1,4 +1,5 @@
 # DevOps Tool Kit Container
+[![Docker Repository on Quay](https://quay.io/repository/synominit0/devops-tools/status "Docker Repository on Quay")](https://quay.io/repository/synominit0/devops-tools)
 
 Devops Tools in a container for easy, platform agnostic usage
 
