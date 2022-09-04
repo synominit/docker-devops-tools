@@ -27,7 +27,7 @@ This image is built on Quay.io automatically any time the upstream OS container 
 
 I use this container to have a quick way to run my terraform plans, ansible playbooks etc. on any platform that has docker installed. 
 
-> **Important Note**: I use this image suited to my specefications and tasks;  The settings and configuration used may not be suitable for your production environments. Use on production servers/in the wild at your own risk!
+> **Important Note**: I use this image suited to my specifications and tasks;  The settings and configuration used may not be suitable for your production environments. Use on production servers/in the wild at your own risk!
 
 ## Author
 
