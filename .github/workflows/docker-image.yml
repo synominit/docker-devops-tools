@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  TEST_TAG: ${{ secrets.DOCKERHUB_USERNAME }}/docker-devops-tools:test
+  DOCKERHUB_LATEST_TAG: ${{ secrets.DOCKERHUB_USERNAME }}/docker-devops-tools:latest
+
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -26,10 +30,25 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
+        name: Build and export to Docker
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          load: true
+          tags: ${{ env.TEST_TAG }}
+      -
+        name: Test
+        run: |
+          docker run --rm ${{ env.TEST_TAG }} terraform --version
+          docker run --rm ${{ env.TEST_TAG }} ansible --version
+          docker run --rm ${{ env.TEST_TAG }} terragrunt --version
+          docker run --rm ${{ env.TEST_TAG }} aws --version
+
+      -
         name: Build and push
         uses: docker/build-push-action@v3
         with:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/docker-devops-tools:latest
+            ${{ env.DOCKERHUB_LATEST_TAG}}
