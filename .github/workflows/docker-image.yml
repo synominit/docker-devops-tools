@@ -8,7 +8,7 @@ on:
 
 env:
   TEST_TAG: ${{ secrets.DOCKERHUB_USERNAME }}/docker-devops-tools:test
-  DOCKER_HUB_LATEST_TAG: ${{ secrets.DOCKERHUB_USERNAME }}/docker-devops-tools:latest
+  DOCKERHUB_LATEST_TAG: ${{ secrets.DOCKERHUB_USERNAME }}/docker-devops-tools:latest
 
 jobs:
   docker:
