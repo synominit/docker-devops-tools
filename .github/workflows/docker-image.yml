@@ -43,6 +43,7 @@ jobs:
           docker run --rm ${{ env.TEST_TAG }} ansible --version
           docker run --rm ${{ env.TEST_TAG }} terragrunt --version
           docker run --rm ${{ env.TEST_TAG }} aws --version
+          docker run --rm ${{ env.TEST_TAG }} packer --version
 
       -
         name: Build and push

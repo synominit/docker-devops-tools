@@ -3,6 +3,7 @@ FROM ubuntu:latest
 # binary versions
 ENV TERRAFORM_VERSION 1.2.8
 ENV TERRAGRUNT_VERSION 0.38.9
+ENV PACKER_VERSION 1.8.3
 
 
 # fix encoding for pypi packages
@@ -27,6 +28,12 @@ RUN curl -LO https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terra
     rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip; \
     chmod +x terraform; \
     mv terraform /usr/local/bin; \
+    # Packer
+    curl -LO https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip; \
+    unzip packer_${PACKER_VERSION}_linux_amd64.zip; \
+    rm packer_${PACKER_VERSION}_linux_amd64.zip; \
+    chmod +x packer; \
+    mv packer /usr/local/bin; \
     # Terragrunt
     curl -LO https://github.com/gruntwork-io/terragrunt/releases/download/v${TERRAGRUNT_VERSION}/terragrunt_linux_amd64; \
     chmod +x terragrunt_linux_amd64; \
@@ -43,5 +50,3 @@ RUN curl -LO https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terra
     pip3 install requests; \
     pip3 install ansible; \
     ansible-galaxy collection install -r /devops/ansible-collections.yml
-
-
