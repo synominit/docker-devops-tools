@@ -51,4 +51,4 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.DOCKER_HUB_LATEST_TAG}}
+            ${{ env.DOCKERHUB_LATEST_TAG}}
