@@ -32,4 +32,4 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/user/docker-devops-tools:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/docker-devops-tools:latest
