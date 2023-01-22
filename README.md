@@ -19,9 +19,9 @@ This image is built on Quay.io automatically any time the upstream OS container 
 ## How to Use
 
   1. [Install Docker](https://docs.docker.com/engine/installation/).
-  2. Pull this image from Quay.io: `docker pull quay.io/synominit0/devops-tools:latest` (or use the image you built earlier, e.g. `devops-tools:latest` you can also use podman).
+  2. Pull this image from Quay.io: `docker pull quay.io/synominit0/devops-tools:latest` or `synominit/docker-devops-tools:latest` (or use the image you built earlier, e.g. `devops-tools:latest` you can also use podman).
   3. Change to directory with playbooks or plans, etc.
-  4. Run and mount the container from the image:  `docker run -it -v ${PWD}:/project:rw devops-tools`
+  4. Run and mount the container from the image:  `docker run -it -v ${PWD}:/project:rw devops-tools` Note: Run `docker run -it --net=host -v ${PWD}:/project:rw devops-tools` if you want to use the packer http preseed server
   5. You can now change to the project directory and run the commands inside of the container.
 
 ## Notes
