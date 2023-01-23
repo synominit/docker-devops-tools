@@ -2,9 +2,8 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - '**'
 
 env:
   TEST_TAG: ${{ secrets.DOCKERHUB_USERNAME }}/docker-devops-tools:test
