@@ -20,7 +20,8 @@ RUN apt update && apt install -y \
     python3 \
     python3-pip \
     libkrb5-dev \
-    gcc
+    gcc \
+    mkisofs
 
 # Install Terraform
 RUN curl -LO https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip; \
