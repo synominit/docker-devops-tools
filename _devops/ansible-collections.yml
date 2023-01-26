@@ -5,3 +5,4 @@ collections:
   - name: community.vmware
   - name: ansible.posix
   - name: ansible.windows
+  - name: devsec.hardening
